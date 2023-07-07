@@ -1,0 +1,89 @@
+/** Theme Colours */
+
+/** Type of colours
+ * standalone: These colours are usually a slightly darker
+ *		(or lighter in dark-theme) variant of their
+ *		respective default counterpart. They are
+ *		meant to provide slightly better contrast
+ *		on the page and container backgrounds, in
+ *		cases where the contrast with the default
+ *		colour is to low
+ * -on:	These colours are meant to provider good
+ *		contrast with their default counterpart, and
+ *		can therefor be used on top of their default
+ *		counterpart
+ */
+
+/** Primary
+ * This colour is used as the primary theme colour. It is used
+ * as base for the themed buttons, page titles, etc...
+ */
+$--pt-theme-primary: --pt-theme-primary;
+$--pt-theme-primary-standalone: --pt-theme-primary-standalone;
+$--pt-theme-on-primary: --pt-theme-on-primary;
+
+$pt-l-theme-primary: #538026;
+$pt-l-theme-primary-standalone: #40542A;
+$pt-l-theme-on-primary: white;
+$pt-d-theme-primary: #85f219;
+$pt-d-theme-primary-standalone: #3d8000;
+$pt-d-theme-on-primary: black;
+
+/** Soft
+ * This colour is used as a soft hint when hovering over elements. (primarily flat-buttons)
+ * It is used as a background colour
+ * It is recommended to take a tint of the primary colour, that has a contrast of
+ * at least 2 with the body-background, for light themes. And at least 9 on dark theme.
+ */
+$--pt-theme-soft: --pt-theme-soft;
+$--pt-theme-on-soft: --pt-theme-on-soft;
+
+$pt-l-theme-soft: #cdf2a9;
+$pt-l-theme-on-soft: #130628;
+$pt-d-theme-soft: #ccf2a9;
+$pt-d-theme-on-soft: #130628;
+
+/**
+ * Theme colour maps
+ * You can leave these alone
+ */
+$user-theme-light: (
+        $--pt-theme-primary: $pt-l-theme-primary,
+        $--pt-theme-primary-standalone: $pt-l-theme-primary-standalone,
+        $--pt-theme-on-primary: $pt-l-theme-on-primary,
+        $--pt-theme-soft: $pt-l-theme-soft,
+        $--pt-theme-on-soft: $pt-l-theme-on-soft
+);
+
+$user-theme-dark: (
+        $--pt-theme-primary: $pt-d-theme-primary,
+        $--pt-theme-primary-standalone: $pt-d-theme-primary-standalone,
+        $--pt-theme-on-primary: $pt-d-theme-on-primary,
+        $--pt-theme-soft: $pt-d-theme-soft,
+        $--pt-theme-on-soft: $pt-d-theme-on-soft
+);
+
+
+// Build the theme
+
+@import "lib/style";
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include spread-map($user-theme-light);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include spread-map($user-theme-dark);
+  }
+}
+
+:root body.light {
+  @include spread-map($user-theme-light);
+}
+
+:root body.dark {
+  @include spread-map($user-theme-dark);
+}
+

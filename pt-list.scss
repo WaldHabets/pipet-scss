@@ -1,0 +1,28 @@
+@import "base-colours";
+@import "pt-containers";
+
+.list-box {
+  @include container-borders();
+  list-style: none;
+  @include control-connect();
+  color: var(--pt-text);
+}
+
+.list-item {
+  padding: 8px;
+  &.active {
+    &:hover {
+      &:first-child {
+        border-radius: 8px 8px 0 0;
+      }
+      &:last-child {
+        border-radius: 0 0 8px 8px;
+      }
+      cursor: pointer;
+      background-color: var(--pt-container-bg-highlight);
+    }
+  }
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--pt-border);
+  }
+}

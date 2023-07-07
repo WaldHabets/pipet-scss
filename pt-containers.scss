@@ -1,0 +1,50 @@
+@import "base-colours";
+@import "pt-lib-controls";
+
+@mixin container-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 1.125rem;
+  margin-bottom: 4px;
+  color: inherit
+}
+@mixin container-description {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1rem;
+  color: inherit;
+}
+
+.container-wrapper {
+  margin: 16px;
+  color: var(--pt-text);
+  &:not(:first-of-type) {
+    margin-top: 32px;
+  }
+}
+
+.container-header {
+  margin-bottom: 8px;
+  color: var(--pt-text);
+  h2, h3, h4, h5, h6,
+  .container-title {
+    @include container-title();
+  }
+  p,
+  .container-description {
+    @include container-description();
+  }
+}
+
+@mixin container-borders() {
+  border-radius: 8px;
+  border: 1px solid var(--pt-border);
+  background-color: var(--pt-container-bg);
+  box-shadow: var(--pt-shadow-container);
+}
+.container {
+  @include container-borders();
+  padding: 16px;
+  @include control-connect();
+  color: var(--pt-text);
+}

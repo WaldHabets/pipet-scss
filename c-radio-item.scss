@@ -1,0 +1,60 @@
+@import "base-a11y";
+
+.radio-item {
+  @include a11y();
+
+  // for vertical alignment
+  display: flex;
+  align-items: center;
+
+  // Theming
+  accent-color: var(--pt-theme-primary);
+  padding: 8px;
+
+  font-size: 1rem;
+  font-weight: normal;
+
+  &:hover:not(.disabled) {
+    background: var(--pt-container-bg-highlight);
+    border-radius: 8px;
+  }
+
+  &:focus-within:focus-visible input[type=checkbox],
+  &:focus-within:focus-visible input[type=radio]{
+    outline: none;
+  }
+
+  input[type=checkbox],
+  input[type=radio] {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .radio-label {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .radio-title {
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    .radio-blurb {
+      font-size: 0.875rem;
+      font-weight: normal;
+      line-height: 1;
+    }
+  }
+
+  &.disabled {
+    .radio-label {
+      opacity: 0.75;
+      .radio-title,
+      .radio-blurb {
+        text-decoration: line-through;
+      }
+    }
+  }
+}

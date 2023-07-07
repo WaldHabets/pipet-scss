@@ -1,0 +1,17 @@
+
+$z-content: 0;
+$z-overlay: 10;
+$z-sidebar: 100;
+$z-dialogs: 1000;
+
+$--pt-z-content: --pt-z-content;
+$--pt-z-overlay: --pt-z-overlay;
+$--pt-z-sidebar: --pt-z-sidebar;
+$--pt-z-dialogs: --pt-z-dialogs;
+
+$pt-units: (
+    $--pt-z-content: $z-content,
+    $--pt-z-overlay: $z-overlay,
+    $--pt-z-sidebar: $z-sidebar,
+    $--pt-z-dialogs: $z-dialogs
+);

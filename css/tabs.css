@@ -1,0 +1,31 @@
+.tabs {
+  border: 1px solid #ababab;
+  background-color: white;
+  box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.7);
+  padding: 4px;
+  border-radius: 32px;
+  display: flex;
+}
+.tabs button {
+  padding: 4px 16px;
+  box-sizing: border-box;
+  display: inline-block;
+  font-weight: bold;
+  border-radius: 32px;
+  flex-grow: 1;
+  text-align: center;
+  margin: 0;
+  background: none;
+  border: none;
+}
+.tabs button:hover:not(.selected) {
+  cursor: pointer;
+  color: #631fca;
+  background-color: rgba(99, 31, 202, 0.2);
+}
+.tabs button.selected {
+  color: #631fca;
+  background-color: rgba(99, 31, 202, 0.4);
+}
+
+/*# sourceMappingURL=tabs.css.map */

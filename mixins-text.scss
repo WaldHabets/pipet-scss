@@ -1,0 +1,24 @@
+@import "var-units";
+
+@mixin text--small() {
+    font-size: $unit-text-small-body;
+    line-height: $unit-text-small-lineheight;
+}
+
+@mixin text--medium() {
+    font-size: $unit-text-medium-body;
+    line-height: $unit-text-medium-lineheight;
+}
+
+@mixin text-large() {
+    font-size: $unit-text-large-body;
+    line-height: $unit-text-large-lineheight;
+}
+
+@mixin text-bold() {
+    font-weight: bold;
+}
+
+@mixin text-italic() {
+    font-style: italic;
+}

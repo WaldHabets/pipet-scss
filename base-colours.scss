@@ -1,0 +1,310 @@
+@use "sass:color";
+
+/**
+ * Section 1
+ * ====================================================================
+ * Body & Containers
+ * These colours are used for the main body and container backgrounds
+ * ====================================================================
+ * /
+
+/** Body ------------------------------------- */
+/** ------------------------------------------ */
+$--pt-body-bg: --pt-body-bg;
+
+$pt-l-body-bg: #f7f7f7;
+$pt-d-body-bg: #1a1a1a;
+
+/** Container -------------------------------- */
+/** ------------------------------------------ */
+$--pt-container-bg: --pt-container-bg;
+$--pt-container-bg-highlight: --pt-container-bg-highlight;
+
+$pt-l-container-bg: #fff;
+$pt-d-container-bg: #111;
+$pt-l-container-bg-hl: #eee;
+$pt-d-container-bg-hl: #222;
+
+/** Border ----------------------------------- */
+/** ------------------------------------------ */
+$--pt-border: --pt-border;
+
+// Used for both containers and controls
+$pt-l-border: #999; // HSL Container: L - 27
+$pt-d-border: #777; // HSL Container: L + 27
+
+/**
+ * Section 2
+ * ====================================================================
+ * Text & Special Colours
+ * These colours are used for banners and some special texts
+ * ====================================================================
+ * /
+
+/** Text ------------------------------------- */
+/** ------------------------------------------ */
+$--pt-text: --pt-text;
+$--pt-text-disabled: --pt-text-disabled;
+
+$pt-l-text: #1a1a1a;
+$pt-d-text: #f7f7f7;
+// Disabled text has a contrast of four with the body
+$pt-l-text-disabled: #666;
+$pt-d-text-disabled: #999;
+
+/** Info Colours ----------------------------- */
+/** ------------------------------------------ */
+$--pt-theme-info: --pt-theme-info;
+$--pt-theme-on-info: --pt-theme-on-info;
+$--pt-theme-info-soft: --pt-theme-info-soft;
+$--pt-theme-info-on-soft: --pt-theme-info-on-soft;
+$--pt-theme-info-standalone: --pt-theme-info-standalone;
+
+// Base & Border
+$pt-l-theme-info: #39f;
+$pt-d-theme-info: #06c;
+$pt-l-theme-on-info: #000000;
+$pt-d-theme-on-info: #FFFFFF;
+// Soft (Mostly used for backgrounds)
+$pt-l-theme-info-soft: #9cf;
+$pt-d-theme-info-soft: #036;
+$pt-l-theme-info-on-soft: $pt-l-text;
+$pt-d-theme-info-on-soft: $pt-d-text;
+// Standalone (Text on body and container)
+// Should have a contrast ratio of a least eight with the body
+$pt-l-theme-info-standalone: $pt-d-theme-info-soft;
+$pt-d-theme-info-standalone: $pt-l-theme-info-soft;
+
+/** Destructive Colours ---------------------- */
+/** ------------------------------------------ */
+$--pt-theme-destructive: --pt-theme-destructive;
+$--pt-theme-on-destructive: --pt-theme-on-destructive;
+$--pt-theme-destructive-soft: --pt-theme-destructive-soft;
+$--pt-theme-destructive-on-soft: --pt-theme-destructive-on-soft;
+$--pt-theme-destructive-standalone: --pt-theme-destructive-standalone;
+
+// Base & Border
+$pt-l-theme-destructive: #f33;
+$pt-d-theme-destructive: #c00;
+$pt-l-theme-on-destructive: #000;
+$pt-d-theme-on-destructive: #fff;
+// Soft (Mostly used for backgrounds)
+$pt-l-theme-destructive-soft: #f99;
+$pt-d-theme-destructive-soft: #600;
+$pt-l-theme-destructive-on-soft: $pt-l-text;
+$pt-d-theme-destructive-on-soft: $pt-d-text;
+// Standalone (Text on body and container)
+// Should have a contrast ratio of a least eight with the body
+$pt-l-theme-destructive-standalone: $pt-d-theme-destructive-soft;
+$pt-d-theme-destructive-standalone: $pt-l-theme-destructive-soft;
+
+/** Warning Colours -------------------------- */
+/** ------------------------------------------ */
+$--pt-theme-warn: --pt-theme-warn;
+$--pt-theme-on-warn: --pt-theme-on-warn;
+$--pt-theme-warn-soft: --pt-theme-warn-soft;
+$--pt-theme-warn-on-soft: --pt-theme-warn-on-soft;
+$--pt-theme-warn-standalone: --pt-theme-warn-standalone;
+
+// Base & Border
+$pt-l-theme-warn: #f93;
+$pt-d-theme-warn: #c60;
+$pt-l-theme-on-warn: $pt-l-text;
+$pt-d-theme-on-warn: $pt-l-text;
+// Soft (Mostly used for backgrounds)
+$pt-l-theme-warn-soft: #fc9;
+$pt-d-theme-warn-soft: #630;
+$pt-l-theme-warn-on-soft: $pt-l-text;
+$pt-d-theme-warn-on-soft: $pt-d-text;
+// Standalone (Text on body and container)
+// Should have a contrast ratio of a least eight with the body
+$pt-l-theme-warn-standalone: $pt-d-theme-warn-soft;
+$pt-d-theme-warn-standalone: $pt-l-theme-warn-soft;
+
+/**
+ * Section 3
+ * ====================================================================
+ * Control & Input Colours
+ * These colours are used for control elements and inputs
+ * ====================================================================
+ * /
+
+/** Flat Control Elements -------------------- */
+/** ------------------------------------------ */
+$--pt-flat-control-bg: --pt-flat-control-bg;
+$--pt-flat-control-bg-highlight: --pt-flat-control-bg-highlight;
+$--pt-flat-control-bg-pressed: --pt-flat-control-bg-pressed;
+
+$pt-l-flat-control-bg: #ccc; // HSL Body: L - 25
+$pt-d-flat-control-bg: #444; // HSL Body: L + 25
+$pt-l-flat-control-bg-highlight: #aaa; // HSL Flat Control BG: L - 15
+$pt-d-flat-control-bg-highlight: #777; // HSL Flat Control BG: L + 15
+$pt-l-flat-control-bg-pressed: #999;
+$pt-d-flat-control-bg-pressed: #888;
+
+/** Button */
+
+$pt-l-control-bg: linear-gradient(0deg, #e6e6e6 35%, white 100%);
+$pt-l-control-bg-border: $pt-l-border;
+$pt-l-control-on-bg: $pt-l-text;
+
+/**
+ * elevated colour: lightness - 5
+ */
+$pt-l-control-bg-elevated: linear-gradient(0deg, #d9d9d9 35%, #f2f2f2 100%);
+$pt-l-control-bg-elevated-border: #a1a1a1;
+$pt-l-control-on-bg-elevated: #262626;
+
+$pt-l-element-bg-disabled: #eceff1;
+$pt-l-element-bg-disabled-border: #b0bec5;
+
+/** Input & Buttons */
+
+$pt-control-text: --pt-control-text;
+$pt-control-border: --pt-control-border;
+$pt-control-border-focus: --pt-control-border-focus;
+$pt-input-bg: --pt-input-bg;
+$pt-button-bg-plain: --pt-button-bg-plain;
+$pt-button-bg-plain-focus: --pt-button-bg-plain-focus;
+$pt-button-bg-gradient: --pt-button-bg-gradient;
+$pt-button-bg-gradient-focus: --pt-button-bg-gradient-focus;
+$pt-button-bg-gradient-reverse: --pt-button-bg-gradient-reverse;
+
+$pt-l-control-text: $pt-l-text;
+$pt-d-control-text: $pt-d-text;
+$pt-l-control-border: $pt-l-border; // HSL Border: L - 10
+$pt-d-control-border: $pt-d-border; // HSL Border: L + 10
+$pt-l-control-border-focus: color.adjust($pt-l-control-border, $lightness: - 15%);
+$pt-d-control-border-focus: color.adjust($pt-d-control-border, $lightness: + 15%);
+
+$pt-l-input-bg: $pt-l-container-bg;
+$pt-d-input-bg: $pt-d-container-bg;
+
+$pt-l-button-bg-plain: #ccc;
+$pt-d-button-bg-plain: #444;
+$pt-l-button-bg-end: color.adjust($pt-l-button-bg-plain, $lightness: +15%);
+$pt-d-button-bg-end: color.adjust($pt-d-button-bg-plain, $lightness: +15%);
+
+$pt-l-button-bg-plain-focus: color.adjust($pt-l-button-bg-plain, $lightness: - 10%);
+$pt-d-button-bg-plain-focus: color.adjust($pt-d-button-bg-plain, $lightness: + 10%);
+$pt-l-button-bg-end-focus: color.adjust($pt-l-button-bg-plain-focus, $lightness: +15%);
+$pt-d-button-bg-end-focus: color.adjust($pt-d-button-bg-plain-focus, $lightness: +15%);
+$pt-l-button-bg-gradient:
+        linear-gradient(0deg, $pt-l-button-bg-plain 35%, $pt-l-button-bg-end 100%);
+$pt-d-button-bg-gradient:
+        linear-gradient(0deg, $pt-d-button-bg-plain 35%, $pt-d-button-bg-end 100%);
+$pt-l-button-bg-gradient-focus:
+        linear-gradient(0deg, $pt-l-button-bg-plain-focus 35%, $pt-l-button-bg-end-focus 100%);
+$pt-d-button-bg-gradient-focus:
+        linear-gradient(0deg, $pt-d-button-bg-plain-focus 35%, $pt-d-button-bg-end-focus 100%);
+$pt-l-button-bg-gradient-reverse:
+        linear-gradient(0deg, $pt-l-button-bg-end-focus 35%, $pt-l-button-bg-plain-focus 100%);
+$pt-d-button-bg-gradient-reverse:
+        linear-gradient(0deg, $pt-d-button-bg-end-focus 35%, $pt-d-button-bg-plain-focus 100%);
+
+/** Disabled Controls */
+
+/** Theming Maps */
+
+
+
+
+$--pt-page: --pt-page;
+// Controls - Default
+$--pt-default-ctrl-bg: --pt-default-ctrl-bg;
+$--pt-default-ctrl-bg-border: --pt-default-ctrl-bg-border;
+$--pt-default-ctrl-on-bg: --pt-default-ctrl-on-bg;
+// Controls - Default Elevated
+
+
+
+
+
+
+$pt-colours-light: (
+  $--pt-border: $pt-l-border,
+  $--pt-text: $pt-l-text,
+  $--pt-text-disabled: $pt-l-text-disabled,
+  $--pt-body-bg: $pt-l-body-bg,
+  $--pt-container-bg: $pt-l-container-bg,
+  $--pt-container-bg-highlight: $pt-l-container-bg-hl,
+  // Controls - Default
+  $--pt-default-ctrl-bg: $pt-l-control-bg,
+  $--pt-default-ctrl-bg-border: $pt-l-control-bg-border,
+  $--pt-default-ctrl-on-bg: $pt-l-control-on-bg,
+  // Controls
+  $pt-control-text: $pt-l-text,
+  $pt-control-border: $pt-l-control-border,
+  $pt-control-border-focus: $pt-l-control-border-focus,
+  /** Flat Button */
+  $--pt-flat-control-bg: $pt-l-flat-control-bg,
+  $--pt-flat-control-bg-highlight: $pt-l-flat-control-bg-highlight,
+  $--pt-flat-control-bg-pressed: $pt-l-flat-control-bg-pressed,
+  $pt-input-bg: $pt-l-input-bg,
+  $pt-button-bg-plain: $pt-l-button-bg-plain,
+  $pt-button-bg-plain-focus: $pt-l-button-bg-plain-focus,
+  $pt-button-bg-gradient: $pt-l-button-bg-gradient,
+  $pt-button-bg-gradient-focus: $pt-l-button-bg-gradient-focus,
+  $pt-button-bg-gradient-reverse: $pt-l-button-bg-gradient-reverse,
+  $--pt-theme-info: $pt-l-theme-info,
+  $--pt-theme-on-info: $pt-l-theme-on-info,
+  $--pt-theme-info-soft: $pt-l-theme-info-soft,
+  $--pt-theme-info-on-soft: $pt-l-theme-info-on-soft,
+  $--pt-theme-info-standalone: $pt-l-theme-info-standalone,
+
+  $--pt-theme-warn: $pt-l-theme-warn,
+  $--pt-theme-on-warn: $pt-l-theme-on-warn,
+  $--pt-theme-warn-soft: $pt-l-theme-warn-soft,
+  $--pt-theme-warn-on-soft: $pt-l-theme-warn-on-soft,
+  $--pt-theme-warn-standalone: $pt-l-theme-warn-standalone,
+
+  $--pt-theme-destructive: $pt-l-theme-destructive,
+  $--pt-theme-on-destructive: $pt-l-theme-on-destructive,
+  $--pt-theme-destructive-soft: $pt-l-theme-destructive-soft,
+  $--pt-theme-destructive-on-soft: $pt-l-theme-destructive-on-soft,
+  $--pt-theme-destructive-standalone: $pt-l-theme-destructive-standalone,
+);
+
+$pt-colours-dark: (
+  $--pt-border: $pt-d-border,
+  $--pt-text: $pt-d-text,
+  $--pt-text-disabled: $pt-d-text-disabled,
+  $--pt-body-bg: $pt-d-body-bg,
+  $--pt-container-bg: $pt-d-container-bg,
+  $--pt-container-bg-highlight: $pt-d-container-bg-hl,
+  // Controls
+  $--pt-default-ctrl-bg: $pt-l-control-bg,
+  $--pt-default-ctrl-bg-border: $pt-l-control-bg-border,
+  $--pt-default-ctrl-on-bg: $pt-l-control-on-bg,
+  // Controls
+  $pt-control-text: $pt-d-text,
+  $pt-control-border: $pt-d-control-border,
+  $pt-control-border-focus: $pt-d-control-border-focus,
+  /** Flat button */
+  $--pt-flat-control-bg: $pt-d-flat-control-bg,
+  $--pt-flat-control-bg-highlight: $pt-d-flat-control-bg-highlight,
+  $--pt-flat-control-bg-pressed: $pt-d-flat-control-bg-pressed,
+  $pt-input-bg: $pt-d-input-bg,
+  $pt-button-bg-plain: $pt-d-button-bg-plain,
+  $pt-button-bg-plain-focus: $pt-d-button-bg-plain-focus,
+  $pt-button-bg-gradient: $pt-d-button-bg-gradient,
+  $pt-button-bg-gradient-focus: $pt-d-button-bg-gradient-focus,
+  $pt-button-bg-gradient-reverse: $pt-d-button-bg-gradient-reverse,
+  $--pt-theme-info: $pt-d-theme-info,
+  $--pt-theme-on-info: $pt-d-theme-on-info,
+  $--pt-theme-info-soft: $pt-d-theme-info-soft,
+  $--pt-theme-info-on-soft: $pt-d-theme-info-on-soft,
+  $--pt-theme-info-standalone: $pt-d-theme-info-standalone,
+
+  $--pt-theme-warn: $pt-d-theme-warn,
+  $--pt-theme-on-warn: $pt-d-theme-on-warn,
+  $--pt-theme-warn-soft: $pt-d-theme-warn-soft,
+  $--pt-theme-warn-on-soft: $pt-d-theme-warn-on-soft,
+  $--pt-theme-warn-standalone: $pt-d-theme-warn-standalone,
+
+  $--pt-theme-destructive: $pt-d-theme-destructive,
+  $--pt-theme-on-destructive: $pt-d-theme-on-destructive,
+  $--pt-theme-destructive-soft: $pt-d-theme-destructive-soft,
+  $--pt-theme-destructive-on-soft: $pt-d-theme-destructive-on-soft,
+  $--pt-theme-destructive-standalone: $pt-d-theme-destructive-standalone
+);

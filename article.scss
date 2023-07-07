@@ -1,0 +1,199 @@
+/**
+ * Pipet Article Elements
+ * ========
+ * Styling for textual content
+ */
+
+
+/**
+ * ==================================================================
+ * Shared
+ * ==================================================================
+ */
+
+@mixin article-default-font {
+  color: var(--pt-text);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+/**
+ * ==================================================================
+ * Shared
+ * ==================================================================
+ */
+
+/**
+ * Paragraphs
+ */
+@mixin paragraph {
+  color: var(--pt-text);
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  margin-block: 8px;
+}
+.paragraph {
+  @include paragraph();
+}
+
+@mixin ol {
+  list-style: disc;
+  margin-inline-start: 16px;
+}
+.ol {
+  @include ol();
+}
+
+@mixin ul {
+  list-style: lower-roman;
+  margin-inline-start: 16px;
+}
+.ul {
+  @include ul();
+}
+
+/**
+ * Hrefs
+ *
+ * Recommended structure
+ * ========
+ * - <a>, for links
+ * - <span>, for future links / links without an endpoint
+ */
+@mixin href-base {
+  text-decoration-thickness: 2px;
+  color: inherit;
+}
+
+@mixin href {
+  @include href-base();
+  text-decoration-color: var(--pt-theme-info);
+  &:hover {
+    cursor: pointer;
+    color: var(--pt-theme-info-standalone);
+  }
+}
+.href {
+  @include href();
+}
+
+@mixin href-no-target {
+  @include href-base();
+  text-decoration-color: var(--pt-theme-destructive);
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+.href-no-target {
+  @include href-no-target();
+}
+
+@mixin blockquote {
+  color: var(--pt-text);
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  background: var(--pt-container-bg-highlight);
+  padding: 8px;
+  padding-inline-start: 24px;
+  border-inline-start: 4px solid var(--pt-theme-primary);
+  border-radius: 4px;
+  box-shadow: var(--pt-shadow-container);
+}
+.blockquote {
+  @include blockquote();
+}
+
+@mixin image {
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: var(--pt-container-bg);
+  border: 1px solid var(--pt-border);
+  border-radius: 4px;
+  box-shadow: var(--pt-shadow-container);
+
+  margin-block: 16px;
+
+  // Image specific properties
+  object-fit: scale-down;
+  display: block;
+  margin-inline: auto;
+  padding: 4px;
+}
+.image {
+ @include image();
+}
+
+@mixin table {
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: var(--pt-container-bg);
+  border: 1px solid var(--pt-border);
+  border-radius: 4px;
+  box-shadow: var(--pt-shadow-container);
+
+  margin-block: 16px;
+
+  // Table specific properties
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: scroll;
+
+  th, td {
+    padding: 8px;
+    text-align: start;
+  }
+
+  thead {
+    font-size: 1.125rem;
+    font-weight: bold;
+    border-bottom: 3px solid var(--pt-border);
+  }
+  tbody {
+    tr:nth-child(odd) {
+      background-color: var(--pt-container-bg-highlight);
+    }
+    tr:not(:last-child) {
+      border-bottom: 1px solid var(--pt-border);
+    }
+  }
+}
+.table {
+ @include table();
+}
+
+.article {
+  text-align: justify;
+  & > section > p,
+  & > p {
+    @include paragraph();
+    & > a {
+      @include href();
+    }
+    & > ul {
+      @include ul();
+    }
+    & > ol {
+      @include ol();
+    }
+  }
+  & > section > ul,
+  & > ul {
+    @include ul();
+  }
+  & > section > ol,
+  & > ol {
+    @include ol();
+  }
+  & > section > blockquote,
+  & > blockquote {
+    @include blockquote();
+  }
+  img {
+    @include image();
+  }
+  table {
+    @include table();
+  }
+}

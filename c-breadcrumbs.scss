@@ -1,0 +1,42 @@
+@import "base-colours";
+@import "pt-lib-controls";
+
+.breadcrumbs {
+  @include control-base();
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  width: min-content;
+
+  background: var(--pt-flat-control-bg);
+  border: none;
+  border-radius: 8px;
+  box-shadow: none;
+
+  max-width: 100%;
+  overflow-x: scroll;
+  overflow-y: clip;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    fill: var(--pt-text);
+  }
+  & > span,
+  & > a {
+    padding: 4px 8px;
+    border-radius: 4px;
+    width: max-content;
+    flex-shrink: 0;
+    &:hover:not(.selected) {
+      background: var(--pt-theme-primary);
+      color: var(--pt-theme-on-primary);
+    }
+  }
+  .selected {
+    background: var(--pt-theme-primary);
+    color: var(--pt-theme-on-primary);
+  }
+}

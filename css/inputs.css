@@ -1,0 +1,138 @@
+@charset "UTF-8";
+.text-input {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid #b0bec5;
+  box-shadow: 0px 0px 4px -1px rgba(0, 0, 0, 0.7) inset;
+}
+.text-input:disabled {
+  box-shadow: none;
+  background: #eceff1;
+  border-color: #b0bec5;
+  color: #b0bec5;
+}
+.text-input:focus {
+  outline: none;
+  border-width: 2px;
+  border-color: grey;
+  padding: 7px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.7) inset;
+}
+
+/**
+ * Compact Textinput
+ * Validation styling disabled
+ */
+.text-input-c {
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid #b0bec5;
+  box-shadow: 0px 0px 4px -1px rgba(0, 0, 0, 0.7) inset;
+}
+.text-input-c:disabled {
+  box-shadow: none;
+  background: #eceff1;
+  border-color: #b0bec5;
+  color: #b0bec5;
+}
+.text-input-c:focus {
+  outline: none;
+  border-width: 2px;
+  border-color: grey;
+  padding: 3px 7px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.7) inset;
+}
+
+.text-input-v {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid #b0bec5;
+  box-shadow: 0px 0px 4px -1px rgba(0, 0, 0, 0.7) inset;
+}
+.text-input-v:disabled {
+  box-shadow: none;
+  background: #eceff1;
+  border-color: #b0bec5;
+  color: #b0bec5;
+}
+.text-input-v:focus {
+  outline: none;
+  border-width: 2px;
+  border-color: grey;
+  padding: 7px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.7) inset;
+}
+.text-input-v:invalid:not(:disabled) {
+  border-color: red;
+}
+.text-input-v:invalid:not(:disabled):focus {
+  border-color: red;
+  box-shadow: 0px 0px 4px 0px rgba(255, 0, 0, 0.7) inset;
+}
+.text-input-v:invalid:not(:disabled) + span:after {
+  content: "✖";
+  color: red;
+}
+.text-input-v:valid:not(:disabled) {
+  border-color: green;
+}
+.text-input-v:valid:not(:disabled):focus {
+  border-color: green;
+  box-shadow: 0px 0px 4px 0px rgba(0, 128, 0, 0.7) inset;
+}
+.text-input-v:valid:not(:disabled) + span:after {
+  content: "✔";
+  color: green;
+}
+
+.text-input-c-v {
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid #b0bec5;
+  box-shadow: 0px 0px 4px -1px rgba(0, 0, 0, 0.7) inset;
+}
+.text-input-c-v:disabled {
+  box-shadow: none;
+  background: #eceff1;
+  border-color: #b0bec5;
+  color: #b0bec5;
+}
+.text-input-c-v:focus {
+  outline: none;
+  border-width: 2px;
+  border-color: grey;
+  padding: 3px 7px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.7) inset;
+}
+.text-input-c-v:invalid:not(:disabled) {
+  border-color: red;
+}
+.text-input-c-v:invalid:not(:disabled):focus {
+  border-color: red;
+  box-shadow: 0px 0px 4px 0px rgba(255, 0, 0, 0.7) inset;
+}
+.text-input-c-v:invalid:not(:disabled) + span:after {
+  content: "✖";
+  color: red;
+}
+.text-input-c-v:valid:not(:disabled) {
+  border-color: green;
+}
+.text-input-c-v:valid:not(:disabled):focus {
+  border-color: green;
+  box-shadow: 0px 0px 4px 0px rgba(0, 128, 0, 0.7) inset;
+}
+.text-input-c-v:valid:not(:disabled) + span:after {
+  content: "✔";
+  color: green;
+}
+
+/*# sourceMappingURL=inputs.css.map */

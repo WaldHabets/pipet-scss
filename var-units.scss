@@ -1,0 +1,50 @@
+$unit-spacing-tiny: 4px;
+$unit-spacing-small: 8px;
+$unit-spacing-medium: 16px;
+$unit-spacing-large: 32px;
+
+// Compact measurements
+$unit-c-spacing-tiny: 2px;
+$unit-c-spacing-small: 4px;
+$unit-c-spacing-medium: 8px;
+$unit-c-spacing-large: 16px;
+
+/** Controls */
+/** ============================================= */
+$unit-control-small: 32px;
+$unit-control-medium: 40px;
+$unit-control-large: 48px;
+
+$unit-component-compact: 32px;
+$unit-component-medium: 40px;
+$unit-component-big: 48px;
+
+/** Text Headers */
+$unit-text-small-header: 18px;
+$unit-text-small-body: 14px;
+$unit-text-small-lineheight: 18px;
+
+$unit-text-medium-header: 20px;
+$unit-text-medium-body: 16px;
+$unit-text-medium-lineheight: 20px;
+
+$unit-text-large-header: 22px;
+$unit-text-large-body: 18px;
+$unit-text-large-lineheight: 22px;
+
+$unit-text-huge-header: 48px;
+
+/** Text Bodies */
+
+/** Variables */
+$--pt-spacing-tiny: --pt-spacing-tiny;
+$--pt-spacing-small: --pt-spacing-small;
+$--pt-spacing-medium: --pt-spacing-medium;
+$--pt-spacing-large: --pt-spacing-large;
+
+$pt-units: (
+  $--pt-spacing-tiny: $unit-spacing-tiny,
+  $--pt-spacing-small: $unit-spacing-small,
+  $--pt-spacing-medium: $unit-spacing-medium,
+  $--pt-spacing-large: $unit-spacing-large
+);

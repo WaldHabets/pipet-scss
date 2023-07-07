@@ -1,0 +1,81 @@
+@import "base-a11y";
+@import "base-colours";
+@import "pt-containers";
+
+@mixin details-button($round) {
+  .expand-button {
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    @if($round) {
+      border-radius: 0 0 4px 4px;
+    } @else {
+      border-radius: 0;
+    }
+    align-items: center;
+    border: none;
+    width: 100%;
+    background: none;
+    box-sizing: border-box;
+    * {
+      display: block;
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+    background: var(--pt-flat-control-bg);
+    &:hover {
+      background: var(--pt-flat-control-bg-highlight);
+      cursor: pointer;
+    }
+    &:active {
+      background: var(--pt-flat-control-bg-pressed);
+    }
+  }
+}
+
+.details-container-wrapper {
+  @include container-borders();
+  @include control-connect();
+  color: var(--pt-text);
+  padding: 0;
+  .summary-container {
+    @include a11y();
+
+    .summary {
+      border-block-end: 1px solid var(--pt-border);
+      padding: 8px;
+    }
+
+    .summary-flex {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 4px;
+      .summary-title {
+        font-size: 1.125rem;
+        font-weight: bold;
+        line-height: 1;
+      }
+      .summary-blurb {
+        font-size: 1rem;
+        font-weight: normal;
+        line-height: 1;
+      }
+    }
+    @include details-button(false);
+    &.--expanded {
+      @include details-button(true);
+    }
+  }
+  .details-container {
+    border-top: 1px solid var(--pt-border);
+    background: rgba(black, 0.05);
+    padding: 0;
+    .details {
+      padding: 8px;
+      border-block-end: 1px solid var(--pt-border);
+    }
+    @include details-button(true);
+  }
+}

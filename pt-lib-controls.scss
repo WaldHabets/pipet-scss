@@ -1,0 +1,117 @@
+@use "sass:color";
+
+@import "var-units";
+
+@mixin control-disabled() {
+    &:disabled {
+        box-shadow: none;
+        background: #eceff1;
+        border-color: #b0bec5;
+
+        color: rgba(176,190,197,1);
+        cursor: no-drop;
+    }
+}
+
+@mixin control-shadow() {
+    //$color-transparent: rgba(0, 0, 0, 0.7);
+    //$color: color.mix($color-transparent, white);
+
+    box-shadow: var(--pt-shadow-control);
+
+    &:disabled {
+        box-shadow: none;
+    }
+}
+
+@mixin control-connect() {
+    &.--connect-start {
+        margin-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    &.--connect-end {
+        margin-right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    &.--connect-top {
+        margin-top: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    &.--connect-bottom {
+        margin-bottom: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+
+@mixin control-shape() {
+    box-sizing: border-box;
+    border-radius: 4px;
+	padding: 8px;
+    font-size: 1rem;
+	text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-width: 3px;
+
+    &:disabled {
+        border-width: 1px;
+    }
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Default */
+    height: $unit-component-medium;
+    line-height: 20px;
+    &.--square {
+        width: $unit-component-medium;
+    }
+    &.--icon {
+        padding: 7px; // + 1px border
+        label {
+            padding: 2px;
+        }
+    }
+
+
+    &.--compact {
+        padding: 4px 8px;
+        line-height: 24px;
+        height: $unit-component-compact;
+        &.--square {
+            width: $unit-component-compact;
+        }
+        
+        &.--icon {
+            padding: 3px; // + 1px border
+            label {
+                padding: 2px;
+            }
+        }
+    }
+    &.--big {
+        height: $unit-component-big;
+        line-height: 28px;
+        &.--square {
+            width: $unit-component-big;
+        }
+        &.--icon {
+            padding: 11px; // + 1px border
+            label {
+                padding: 2px;
+            }
+        }
+    }
+}
+
+@mixin control-base() {
+    //@include control-shadow();
+    @include control-connect();
+    @include control-shape();
+}

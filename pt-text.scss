@@ -1,0 +1,85 @@
+@import "base-colours.scss";
+@import "var-units";
+@import "mixins-text";
+
+.title-2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--pt-theme-primary-standalone);
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+.title-3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--pt-theme-primary-standalone);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.title-4 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: var(--pt-theme-primary-standalone);
+    margin-top: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.paragraph {
+    font-size: 1.125rem;
+    line-height: 1.6rem;
+    margin-block: 0.5rem;
+}
+
+@mixin header-small {
+    font-size: $unit-text-small-header;
+    font-weight: bold;
+    line-height: $unit-text-small-header + $unit-spacing-tiny;
+}
+@mixin header-medium {
+    font-size: $unit-text-medium-body;
+    font-weight: bold;
+    line-height: $unit-text-medium-body + $unit-spacing-tiny;
+}
+@mixin header-big {
+    font-size: $unit-text-large-body;
+    font-weight: bold;
+    line-height: $unit-text-large-body + $unit-spacing-tiny;
+}
+
+.text {
+    font-weight: normal;
+    font-style: normal;
+    &.--small {
+        @include text--small();
+    }
+    &.--medium {
+        @include text--medium();
+    }
+    &.--large {
+        @include text-large();
+    }
+    &.--bold {
+        font-weight: bold;
+    }
+    &.--italic {
+        font-style: italic;
+    }
+}
+
+.form-label {
+    @include text--small();
+    font-weight: bold;
+    margin-bottom: $unit-spacing-tiny;
+    margin-top: $unit-spacing-small;
+}
+
+.label {
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+    &.--inline {
+        display: inline-block;
+        margin: unset;
+    }
+}

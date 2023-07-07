@@ -1,0 +1,43 @@
+@mixin page-bar() {
+  z-index: 10;
+  background: var(--pt-body-bg);
+}
+
+.header-bar {
+  @include page-bar();
+  padding: 16px 0 8px 0;
+  & > div /* Inner */ {
+    padding-left: 16px;
+    padding-right: 16px;
+    h1 /* Page Title */ {
+      font-size: 3rem;
+      line-height: 3rem;
+      font-weight: bold;
+      color: var(--pt-theme-primary-standalone);
+    }
+    p /* Page Description */ {
+      margin-top: 8px;
+      font-size: 1.125rem;
+      line-height: 1.125rem;
+      font-weight: normal;
+    }
+  }
+
+  &.--standalone {
+    border-bottom: 1px solid var(--pt-border);
+  }
+}
+
+.menu-bar {
+  @include page-bar();
+  padding: 8px 0 8px 0;
+  position: sticky;
+  top: 0;
+
+  border-bottom: 1px solid var(--pt-border);
+
+  & > div /* Inner */ {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

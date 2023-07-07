@@ -1,0 +1,45 @@
+@import "base-colours";
+@import "var-units";
+
+@mixin table($border-colour) {
+    $border: 2px solid $border-colour;
+
+
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+      border-bottom: 2px solid $border-colour;
+      border-top: 2px solid $border-colour;
+      tr {
+        //background-color: $view-nav-background;
+        th {
+          padding: $unit-spacing-tiny;
+        }
+      }
+    }
+
+    tbody {
+      //border-left: $border;
+      //border-right: $border;
+      border-bottom: $border;
+      tr {
+        &:nth-child(even) {
+          background-color: #ededed;
+        }
+      }
+    }
+
+    td,
+    th {
+      padding: $unit-spacing-tiny $unit-spacing-small;
+    }
+}
+
+@mixin table--light() {
+    @include table($pt-l-border);
+}
+
+@mixin table--dark() {
+    @include table($pt-d-border);
+}

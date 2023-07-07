@@ -1,0 +1,87 @@
+@import "base-colours";
+@import "base-a11y";
+@import "pt-lib-controls";
+
+@mixin input-base($validate: false, $compact: false) {
+  @include a11y();
+  @include control-base();
+  border-color: var(--pt-control-border);
+  background: var(--pt-input-bg);
+  color: var(--pt-control-text);
+  &:hover {
+    border-color: var(--pt-control-border-focus);
+  }
+
+  &:disabled {
+    box-shadow: none;
+    background: rgba(236,239,241,1);
+    border-color: rgba(176,190,197,1);
+
+    color: rgba(176,190,197,1);
+    cursor: no-drop;
+  }
+
+  &:focus {
+    outline: none;
+    border-width: 2px;
+    border-color: var(--pt-control-border-focus);
+    @if ($compact) {
+      padding: 3px 7px;
+    }
+    @else {
+      padding: 7px;
+    }
+
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.7) inset;
+  }
+
+  @if ($validate) {
+
+    &:invalid:not(:disabled) {
+      border-color: red;
+      &:focus {
+        border-color: red;
+        box-shadow: 0 0 4px 0 rgba(255, 0, 0, 0.7) inset;
+      }
+    }
+
+    &:invalid:not(:disabled) + span:after {
+      content: '✖';
+      color: red;
+    }
+
+    &:valid:not(:disabled) {
+      border-color: green;
+      &:focus {
+        border-color: green;
+        box-shadow: 0 0 4px 0 rgba(0, 128, 0, 0.7) inset;
+      }
+    }
+
+    &:valid:not(:disabled) + span:after {
+      content: '✔';
+      color: green;
+    }
+
+  }
+}
+
+.text-input {
+  @include input-base();
+}
+
+/**
+ * Compact Textinput
+ * Validation styling disabled
+ */
+.text-input-c {
+  @include input-base(false, true);
+}
+
+.text-input-v {
+  @include input-base(true, false);
+}
+
+.text-input-c-v {
+  @include input-base(true, true);
+}

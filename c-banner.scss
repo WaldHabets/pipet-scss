@@ -1,0 +1,59 @@
+/**
+ * Pipet Banner Class
+ * ========
+ * Banners can be used to display messages to users.
+ *
+ * Recommended Structure
+ * ========
+ * - <div class="banner(-x)>
+ *  - (optional) <h2>, <h3>, <h4>, <h5>, <h6>, <strong>, .banner-title
+ *  - <p>
+ */
+
+@mixin banner() {
+  border-top-width: 8px;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-style: solid;
+  border-radius: 4px;
+  box-shadow: var(--pt-shadow-container);
+  padding: 16px;
+  font-size: 1rem;
+
+  & > .banner-title,
+  & > h2, & > h3, & > h4, & > h5, & > h6,
+  & > strong {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+}
+
+.banner {
+  @include banner();
+  background: var(--pt-container-bg-highlight);
+  border-color: var(--pt-border);
+  color: var(--pt-text);
+}
+
+.banner-info {
+  @include banner();
+  background: var(--pt-theme-info-soft);
+  border-color: var(--pt-theme-info);
+  color: var(--pt-theme-info-on-soft);
+}
+
+.banner-warn {
+  @include banner();
+  background: var(--pt-theme-warn-soft);
+  border-color: var(--pt-theme-warn);
+  color: var(--pt-theme-warn-on-soft);
+}
+
+.banner-important {
+  @include banner();
+  background: var(--pt-theme-destructive-soft);
+  border-color: var(--pt-theme-destructive);
+  color: var(--pt-theme-destructive-on-soft);
+}

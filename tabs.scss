@@ -1,0 +1,40 @@
+@use "sass:color";
+
+@mixin tabs($color){
+  $color-20: rgba($color, 0.2);
+  $color-40: rgba($color, 0.4);
+
+  border: 1px solid #ababab;
+  background-color: white;
+  box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.7);
+  padding: 4px;
+  border-radius: 32px;
+  display: flex;
+
+  button {
+    padding: 4px 16px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 32px;
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    background: none;
+    border: none;
+
+    &:hover:not(.selected) {
+      cursor: pointer;
+      color: $color;
+      background-color: $color-20;
+    }
+    &.selected {
+      color: $color;
+      background-color: $color-40;
+    }
+  }
+}
+
+.tabs {
+  @include tabs(#631fca);
+}

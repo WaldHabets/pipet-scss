@@ -1,0 +1,7 @@
+
+@mixin transition-background() {
+  $transition: background .2s linear;
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  transition: $transition;
+}
