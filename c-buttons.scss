@@ -118,13 +118,25 @@
     display: inline-block;
 
     &.--themed {
+        /** Deprecated */
         @include button($pt-l-theme-primary);
     }
     &.--alert {
+        /** Deprecated */
         @include button($pt-l-theme-destructive-soft);
     }
     &.--warn {
-        @include button($pt-l-theme-warn);
+        /** Deprecated */
+        @include button($pt-l-theme-warn-soft);
+    }
+    &--primary {
+        @include button($pt-l-theme-primary);
+    }
+    &--warn {
+        @include button($pt-l-theme-warn-soft);
+    }
+    &--critical {
+        @include button($pt-l-theme-destructive-soft);
     }
 }
 .flat-button {

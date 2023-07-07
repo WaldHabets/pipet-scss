@@ -1,4 +1,5 @@
 @import "base-colours";
+@import "var-units";
 
 @mixin tablist() {
   padding: 4px;
@@ -9,6 +10,11 @@
   box-sizing: border-box;
   color: var(--pt-text);
   background: var(--pt-flat-control-bg);
+
+  height: $unit-component-medium;
+  a, button {
+    line-height: $unit-component-medium - 16px;
+  }
 
   a,
   button {

@@ -24,7 +24,17 @@
     flex-shrink: 0;
     fill: var(--pt-text);
   }
-  & > span,
+  .chevron {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    fill: var(--pt-text);
+    text-align: center;
+    &::after {
+      content: "❯";
+    }
+  }
+  & > span:not(.chevron),
   & > a {
     padding: 4px 8px;
     border-radius: 4px;
@@ -35,6 +45,7 @@
       color: var(--pt-theme-on-primary);
     }
   }
+
   .selected {
     background: var(--pt-theme-primary);
     color: var(--pt-theme-on-primary);

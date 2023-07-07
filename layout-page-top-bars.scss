@@ -6,15 +6,18 @@
 .header-bar {
   @include page-bar();
   padding: 16px 0 8px 0;
+  .inner,
   & > div /* Inner */ {
     padding-left: 16px;
     padding-right: 16px;
+    .page-title,
     h1 /* Page Title */ {
       font-size: 3rem;
       line-height: 3rem;
       font-weight: bold;
       color: var(--pt-theme-primary-standalone);
     }
+    .page-description,
     p /* Page Description */ {
       margin-top: 8px;
       font-size: 1.125rem;
