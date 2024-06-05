@@ -43,6 +43,11 @@
   background: var(--pt-info-1);
   border-color: var(--pt-info-3);
 }
+.banner-good {
+  @include banner();
+  background: var(--pt-good-1);
+  border-color: var(--pt-good-3);
+}
 .banner-warn, // todo: deprecate "banner-warn"
 .banner-warning {
   @include banner();
