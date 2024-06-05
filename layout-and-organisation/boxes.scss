@@ -1,0 +1,74 @@
+@import "../units";
+
+@mixin box-base() {
+  border-radius: $border-radius-medium;
+  border: $border-width-default solid var(--pt-grey-5);
+  background: var(--pt-grey-1);
+  box-shadow: var(--pt-shadow-container);
+  overflow: hidden;
+
+  color: var(--pt-grey-8);
+}
+
+
+.box-wrapper {
+  margin: 16px;
+  color: var(--pt-grey-8);
+  &.--extra-margin,
+  &:not(:first-of-type) {
+    margin-top: 32px;
+  }
+}
+
+.box-header {
+  margin-bottom: $spacing-small;
+  color: var(--pt-grey-8);
+
+  h2, h3, h4, h5, h6,
+  .box-title {
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 1.25rem;
+    color: inherit
+  }
+
+  p,
+  .box-blurb {
+    margin-top: $spacing-tiny;
+
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.125rem;
+    color: inherit;
+  }
+}
+
+
+.box {
+  @include box-base();
+  padding: 16px;
+}
+
+.box-list {
+  @include box-base();
+  list-style: none;
+}
+
+.list-item {
+  padding: 8px;
+  &.active {
+    &:hover {
+      &:first-child {
+        border-radius: 8px 8px 0 0;
+      }
+      &:last-child {
+        border-radius: 0 0 8px 8px;
+      }
+      cursor: pointer;
+      background-color: var(--pt-grey-3);
+    }
+  }
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--pt-grey-5);
+  }
+}

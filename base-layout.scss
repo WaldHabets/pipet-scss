@@ -1,0 +1,22 @@
+/**
+ * Layout structure
+ * scrollpage -> [
+ *  growbox -> [
+ *    headerbar,
+ *    menubar,
+ *    ...
+ *    main
+ *  ],
+ *  footerbar
+ * ]
+ */
+
+.scrollpage {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.growbox {
+  min-height: calc(100% - 48px);
+}

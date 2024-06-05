@@ -113,9 +113,10 @@ section {
 
 /** Body */
 body {
-	line-height: 1;
+	line-height: 1.125;
 	font-size: 16px;
-	color: var(--pt-text);
+	background: var(--pt-grey-2);
+	color: var(--pt-grey-8);
 }
 
 ol,
@@ -145,7 +146,10 @@ a, button, select, input, textarea {
 
 /** Basic formatting */
 strong, b /** Bold */ {
-	@include text-bold();
+	font-weight: bold;
+}
+em, i {
+	font-style: italic;
 }
 
 kbd {

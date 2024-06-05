@@ -1,21 +1,28 @@
-@mixin page-bar() {
-  z-index: 10;
-  background: var(--pt-body-bg);
+.pt-sticky-top {
+  position: sticky;
+  top: 0;
+}
+
+.page-content {
+  min-height: 95vh;
 }
 
 .header-bar {
-  @include page-bar();
-  padding: 16px 0 8px 0;
-  .inner,
+  margin: 0;
+  padding-inline: 0;
+  padding-block: 16px;
+
+  // border-bottom: 1px solid var(--pt-grey-5);
+
+  & > .inner,
   & > div /* Inner */ {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-inline: 16px;
     .page-title,
     h1 /* Page Title */ {
       font-size: 3rem;
       line-height: 3rem;
       font-weight: bold;
-      color: var(--pt-theme-primary-standalone);
+      color: var(--pt-accent-5);
     }
     .page-description,
     p /* Page Description */ {
@@ -25,22 +32,68 @@
       font-weight: normal;
     }
   }
+}
 
-  &.--standalone {
-    border-bottom: 1px solid var(--pt-border);
+.header-bar-raised {
+  margin: 0;
+  padding-inline: 0;
+  padding-block: 16px 8px;
+
+  position: relative;
+  z-index: 11;
+  background: var(--pt-grey-1);
+  // border-bottom: 1px solid var(--pt-grey-5);
+
+  & > .inner,
+  & > div /* Inner */ {
+    padding-inline: 16px;
+    .page-title,
+    h1 /* Page Title */ {
+      font-size: 3rem;
+      line-height: 3rem;
+      font-weight: bold;
+      color: var(--pt-accent-5);
+    }
+    .page-description,
+    p /* Page Description */ {
+      margin-top: 8px;
+      font-size: 1.125rem;
+      line-height: 1.125rem;
+      font-weight: normal;
+    }
   }
 }
 
 .menu-bar {
-  @include page-bar();
-  padding: 8px 0 8px 0;
+  z-index: 10;
+  margin: 0;
+  padding-inline: 0;
+  padding-block: 8px;
   position: sticky;
   top: 0;
 
-  border-bottom: 1px solid var(--pt-border);
+  background: var(--pt-grey-1);
+  border-bottom: 1px solid var(--pt-grey-5);
+  box-shadow: var(--pt-shadow-control);
 
+  & > .inner,
   & > div /* Inner */ {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-inline: 16px;
+  }
+}
+
+
+.footer-bar {
+  margin: 0;
+  padding-inline: 0;
+  padding-top: 16px;
+  padding-bottom: 64px;
+
+  background: var(--pt-grey-3);
+  border-top: 1px solid var(--pt-grey-5);
+
+  & > .inner,
+  & > div {
+    padding-inline: 16px;
   }
 }

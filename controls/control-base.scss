@@ -1,0 +1,47 @@
+@import "../units";
+
+@mixin control-shape() {
+  box-sizing: border-box;
+
+  border-radius: $border-radius-subtle;
+  padding: $spacing-small;
+  font-size: $font-size-default;
+  text-decoration: none;
+
+  border-style: solid;
+  border-width: 1px;
+  border-block-end-width: 3px;
+
+  &:disabled {
+    border-width: 1px;
+  }
+
+  line-height: 24px;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@mixin control-connect() {
+  &.--connect-start {
+    margin-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  &.--connect-end {
+    margin-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &.--connect-top {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  &.--connect-bottom {
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

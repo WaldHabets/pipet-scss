@@ -1,0 +1,26 @@
+.back-button {
+    @include control-base();
+
+    font-weight: 600;
+    padding: 0;
+
+    border: none;
+    box-shadow: none;
+
+    svg {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        fill: var(--pt-text);
+    }
+    & > a {
+        padding: 8px;
+        border-radius: 4px;
+        width: max-content;
+        flex-shrink: 0;
+        &:hover:not(.selected) {
+            background: var(--pt-theme-primary);
+            color: var(--pt-theme-on-primary);
+        }
+    }
+}

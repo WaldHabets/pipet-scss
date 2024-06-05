@@ -1,0 +1,71 @@
+@import "../base-a11y";
+@import "control-base";
+
+@mixin input() {
+  @include a11y();
+  @include a11y-touchable();
+  @include control-connect();
+  @include control-shape();
+
+  display: inline-block;
+
+  font-weight: normal;
+  color: var(--pt-grey-8);
+
+  background: var(--pt-grey-1);
+  border-color: var(--pt-grey-5);
+
+  svg {
+    fill: currentColor;
+  }
+
+  &:hover:not(:disabled) {
+    cursor: text;
+    border-color: var(--pt-grey-6);
+  }
+  &:active:not(:disabled),
+  &:focus:not(:disabled) {
+    outline: none;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.7) inset;
+    border-color: var(--pt-grey-6);
+    border-width: 1px;
+  }
+  &:disabled {
+    box-shadow: none;
+    color: var(--pt-grey-7);
+    background: var(--pt-grey-3);
+    border-block-end-width: 1px;
+  }
+}
+
+.text-input {
+  @include input();
+}
+
+.text-input-validate {
+  @include input();
+
+  &:invalid:not(:disabled) {
+    border-color: var(--pt-critical-4);
+    &:focus {
+      border-color: var(--pt-critical-5);
+    }
+  }
+
+  &:invalid:not(:disabled) + span:after {
+    content: '✖';
+    color: var(--pt-critical-3);
+  }
+
+  &:valid:not(:disabled) {
+    border-color: var(--pt-good-4);
+    &:focus {
+      border-color: var(--pt-good-5);
+    }
+  }
+
+  &:valid:not(:disabled) + span:after {
+    content: '✔';
+    color: var(--pt-good-3);
+  }
+}

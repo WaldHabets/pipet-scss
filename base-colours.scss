@@ -3,10 +3,281 @@
 /**
  * Section 1
  * ====================================================================
+ * Colours
+ * These colours are used for the main body and container backgrounds
+ * ====================================================================
+ */
+
+/** Light -------------------------- */
+$l-grey-1:      hsl(  0,   0%, 100%);
+$l-grey-2:      hsl(  0,   0%,  95%);
+$l-grey-3:      hsl(  0,   0%,  90%);
+$l-grey-4:      hsl(  0,   0%,  75%);
+$l-grey-5:      hsl(  0,   0%,  60%);
+$l-grey-6:      hsl(  0,   0%,  40%);
+$l-grey-7:      hsl(  0,   0%,  20%);
+$l-grey-8:      hsl(  0,   0%,  10%);
+$l-accent-1:    hsl(330,  80%,  90%) !default;
+$l-accent-2:    hsl(330,  80%,  75%) !default;
+$l-accent-3:    hsl(330,  80%,  60%) !default;
+$l-accent-4:    hsl(330,  80%,  40%) !default;
+$l-accent-5:    hsl(330,  80%,  20%) !default;
+$l-info-1:      hsl(210, 100%,  90%);
+$l-info-2:      hsl(210, 100%,  75%);
+$l-info-3:      hsl(210, 100%,  60%);
+$l-info-4:      hsl(210, 100%,  40%);
+$l-info-5:      hsl(210, 100%,  20%);
+$l-warning-1:   hsl( 40, 100%,  90%);
+$l-warning-2:   hsl( 40, 100%,  75%);
+$l-warning-3:   hsl( 40, 100%,  60%);
+$l-warning-4:   hsl( 40, 100%,  40%);
+$l-warning-5:   hsl( 40, 100%,  20%);
+$l-critical-1:  hsl(  0, 100%,  90%);
+$l-critical-2:  hsl(  0, 100%,  75%);
+$l-critical-3:  hsl(  0, 100%,  60%);
+$l-critical-4:  hsl(  0, 100%,  40%);
+$l-critical-5:  hsl(  0, 100%,  20%);
+$l-good-1:      hsl(152,  70%,  90%);
+$l-good-2:      hsl(152,  70%,  75%);
+$l-good-3:      hsl(152,  70%,  60%);
+$l-good-4:      hsl(152,  70%,  40%);
+$l-good-5:      hsl(152,  70%,  20%);
+/** Dark --------------------------- */
+$d-grey-1:      hsl(  0,   0%,   5%);
+$d-grey-2:      hsl(  0,   0%,  10%);
+$d-grey-3:      hsl(  0,   0%,  15%);
+$d-grey-4:      hsl(  0,   0%,  30%);
+$d-grey-5:      hsl(  0,   0%,  45%);
+$d-grey-6:      hsl(  0,   0%,  65%);
+$d-grey-7:      hsl(  0,   0%,  85%);
+$d-grey-8:      hsl(  0,   0%,  95%);
+$d-accent-1:    hsl(330,  80%,  10%) !default;
+$d-accent-2:    hsl(330,  80%,  25%) !default;
+$d-accent-3:    hsl(330,  80%,  40%) !default;
+$d-accent-4:    hsl(330,  80%,  60%) !default;
+$d-accent-5:    hsl(330,  80%,  80%) !default;
+$d-info-1:      hsl(210, 100%,  10%);
+$d-info-2:      hsl(210, 100%,  25%);
+$d-info-3:      hsl(210, 100%,  40%);
+$d-info-4:      hsl(210, 100%,  60%);
+$d-info-5:      hsl(210, 100%,  20%);
+$d-warning-1:   hsl( 40, 100%,  10%);
+$d-warning-2:   hsl( 40, 100%,  25%);
+$d-warning-3:   hsl( 40, 100%,  40%);
+$d-warning-4:   hsl( 40, 100%,  60%);
+$d-warning-5:   hsl( 40, 100%,  80%);
+$d-critical-1:  hsl(  0, 100%,  10%);
+$d-critical-2:  hsl(  0, 100%,  25%);
+$d-critical-3:  hsl(  0, 100%,  40%);
+$d-critical-4:  hsl(  0, 100%,  60%);
+$d-critical-5:  hsl(  0, 100%,  80%);
+$d-good-1:      hsl(152,  70%,  10%);
+$d-good-2:      hsl(152,  70%,  25%);
+$d-good-3:      hsl(152,  70%,  40%);
+$d-good-4:      hsl(152,  70%,  60%);
+$d-good-5:      hsl(152,  70%,  80%);
+
+/**
+ * Section 2
+ * ====================================================================
+ * Variables
+ * These colours are used for the main body and container backgrounds
+ * ====================================================================
+ */
+
+$--grey-1:                --pt-grey-1;                // box-bg
+$--grey-2:                --pt-grey-2;                // body-bg, gradient-end
+$--grey-3:                --pt-grey-3;                // box-hl, nav-bg, gradient-end-hl
+$--grey-4:                --pt-grey-4;                // nav-hl, gradient-start
+$--grey-5:                --pt-grey-5;                // border, gradient-start-hl
+$--grey-6:                --pt-grey-6;                // border-hl
+$--grey-7:                --pt-grey-7;                // text-disabled
+$--grey-8:                --pt-grey-8;                // text
+$--grey-button-top:       --grey-button-top;
+$--grey-button-bot:       --grey-button-bot;
+$--grey-hl-button-top:    --grey-hl-button-top;
+$--grey-hl-button-bot:    --grey-hl-button-bot;
+$--accent-1:              --pt-accent-1;
+$--accent-2:              --pt-accent-2;
+$--accent-3:              --pt-accent-3;
+$--accent-4:              --pt-accent-4;
+$--accent-5:              --pt-accent-5;
+$--accent-button-top:     --pt-accent-button-top;
+$--accent-button-bot:     --pt-accent-button-bot;
+$--accent-hl-button-top:  --pt-accent-hl-button-top;
+$--accent-hl-button-bot:  --pt-accent-hl-button-bot;
+$--info-1:                --pt-info-1;
+$--info-2:                --pt-info-2;
+$--info-3:                --pt-info-3;
+$--info-4:                --pt-info-4;
+$--info-5:                --pt-info-5;
+$--info-button-top:       --pt-info-button-top;
+$--info-button-bot:       --pt-info-button-bot;
+$--info-hl-button-top:    --pt-info-hl-button-top;
+$--info-hl-button-bot:    --pt-info-hl-button-bot;
+$--warning-1:             --pt-warning-1;
+$--warning-2:             --pt-warning-2;
+$--warning-3:             --pt-warning-3;
+$--warning-4:             --pt-warning-4;
+$--warning-5:             --pt-warning-5;
+$--warning-button-top:    --pt-warning-button-top;
+$--warning-button-bot:    --pt-warning-button-bot;
+$--warning-hl-button-top: --pt-warning-hl-button-top;
+$--warning-hl-button-bot: --pt-warning-hl-button-bot;
+$--critical-1:            --pt-critical-1;
+$--critical-2:            --pt-critical-2;
+$--critical-3:            --pt-critical-3;
+$--critical-4:            --pt-critical-4;
+$--critical-5:            --pt-critical-5;
+$--critical-button-top:   --pt-critical-button-top;
+$--critical-button-bot:   --pt-critical-button-bot;
+$--critical-hl-button-top:--pt-critical-hl-button-top;
+$--critical-hl-button-bot:--pt-critical-hl-button-bot;
+$--good-1:                --pt-good-1;
+$--good-2:                --pt-good-2;
+$--good-3:                --pt-good-3;
+$--good-4:                --pt-good-4;
+$--good-5:                --pt-good-5;
+$--good-button-top:       --pt-good-button-top;
+$--good-button-bot:       --pt-good-button-bot;
+$--good-hl-button-top:    --pt-good-hl-button-top;
+$--good-hl-button-bot:    --pt-good-hl-button-bot;
+
+$colours-system-light: (
+        $--grey-1:                $l-grey-1,
+        $--grey-2:                $l-grey-2,
+        $--grey-3:                $l-grey-3,
+        $--grey-4:                $l-grey-4,
+        $--grey-5:                $l-grey-5,
+        $--grey-6:                $l-grey-6,
+        $--grey-7:                $l-grey-7,
+        $--grey-8:                $l-grey-8,
+        $--grey-button-top:       $l-grey-2,
+        $--grey-button-bot:       $l-grey-4,
+        $--grey-hl-button-top:    $l-grey-3,
+        $--grey-hl-button-bot:    $l-grey-5,
+        $--accent-1:              $l-accent-1,
+        $--accent-2:              $l-accent-2,
+        $--accent-3:              $l-accent-3,
+        $--accent-4:              $l-accent-4,
+        $--accent-5:              $l-accent-5,
+        $--accent-button-top:     $l-accent-2,
+        $--accent-button-bot:     $l-accent-3,
+        $--accent-hl-button-top:  $l-accent-3,
+        $--accent-hl-button-bot:  $l-accent-4,
+        $--info-1:                $l-info-1,
+        $--info-2:                $l-info-2,
+        $--info-3:                $l-info-3,
+        $--info-4:                $l-info-4,
+        $--info-5:                $l-info-5,
+        $--info-button-top:       $l-info-2,
+        $--info-button-bot:       $l-info-3,
+        $--info-hl-button-top:    $l-info-3,
+        $--info-hl-button-bot:    $l-info-4,
+        $--warning-1:             $l-warning-1,
+        $--warning-2:             $l-warning-2,
+        $--warning-3:             $l-warning-3,
+        $--warning-4:             $l-warning-4,
+        $--warning-5:             $l-warning-5,
+        $--warning-button-top:    $l-warning-2,
+        $--warning-button-bot:    $l-warning-3,
+        $--warning-hl-button-top: $l-warning-3,
+        $--warning-hl-button-bot: $l-warning-4,
+        $--critical-1:            $l-critical-1,
+        $--critical-2:            $l-critical-2,
+        $--critical-3:            $l-critical-3,
+        $--critical-4:            $l-critical-4,
+        $--critical-5:            $l-critical-5,
+        $--critical-button-top:   $l-critical-2,
+        $--critical-button-bot:   $l-critical-3,
+        $--critical-hl-button-top:$l-critical-3,
+        $--critical-hl-button-bot:$l-critical-4,
+        $--good-1:                $l-good-1,
+        $--good-2:                $l-good-2,
+        $--good-3:                $l-good-3,
+        $--good-4:                $l-good-4,
+        $--good-5:                $l-good-5,
+        $--good-button-top:       $l-good-2,
+        $--good-button-bot:       $l-good-3,
+        $--good-hl-button-top:    $l-good-3,
+        $--good-hl-button-bot:    $l-good-4,
+);
+$colours-system-dark: (
+        $--grey-1:                $d-grey-1,
+        $--grey-2:                $d-grey-2,
+        $--grey-3:                $d-grey-3,
+        $--grey-4:                $d-grey-4,
+        $--grey-5:                $d-grey-5,
+        $--grey-6:                $d-grey-6,
+        $--grey-7:                $d-grey-7,
+        $--grey-8:                $d-grey-8,
+        $--grey-button-top:       $d-grey-4,
+        $--grey-button-bot:       $d-grey-2,
+        $--grey-hl-button-top:    $d-grey-5,
+        $--grey-hl-button-bot:    $d-grey-3,
+        $--accent-1:              $d-accent-1,
+        $--accent-2:              $d-accent-2,
+        $--accent-3:              $d-accent-3,
+        $--accent-4:              $d-accent-4,
+        $--accent-5:              $d-accent-5,
+        $--accent-button-top:     $d-accent-3,
+        $--accent-button-bot:     $d-accent-2,
+        $--accent-hl-button-top:  $d-accent-4,
+        $--accent-hl-button-bot:  $d-accent-3,
+        $--info-1:                $d-info-1,
+        $--info-2:                $d-info-2,
+        $--info-3:                $d-info-3,
+        $--info-4:                $d-info-4,
+        $--info-5:                $d-info-5,
+        $--info-button-top:       $d-info-3,
+        $--info-button-bot:       $d-info-2,
+        $--info-hl-button-top:    $d-info-4,
+        $--info-hl-button-bot:    $d-info-3,
+        $--warning-1:             $d-warning-1,
+        $--warning-2:             $d-warning-2,
+        $--warning-3:             $d-warning-3,
+        $--warning-4:             $d-warning-4,
+        $--warning-5:             $d-warning-5,
+        $--warning-button-top:    $d-warning-3,
+        $--warning-button-bot:    $d-warning-2,
+        $--warning-hl-button-top: $d-warning-4,
+        $--warning-hl-button-bot: $d-warning-3,
+        $--critical-1:            $d-critical-1,
+        $--critical-2:            $d-critical-2,
+        $--critical-3:            $d-critical-3,
+        $--critical-4:            $d-critical-4,
+        $--critical-5:            $d-critical-5,
+        $--critical-button-top:   $d-critical-3,
+        $--critical-button-bot:   $d-critical-2,
+        $--critical-hl-button-top:$d-critical-4,
+        $--critical-hl-button-bot:$d-critical-3,
+        $--good-1:                $d-good-1,
+        $--good-2:                $d-good-2,
+        $--good-3:                $d-good-3,
+        $--good-4:                $d-good-4,
+        $--good-5:                $d-good-5,
+        $--good-button-top:       $d-good-3,
+        $--good-button-bot:       $d-good-2,
+        $--good-hl-button-top:    $d-good-4,
+        $--good-hl-button-bot:    $d-good-3,
+);
+
+/**
+ * Section 3
+ * ====================================================================
+ * Predefined
+ * These colours are used for the main body and container backgrounds
+ * ====================================================================
+ */
+
+
+/**
+ * Section 1
+ * ====================================================================
  * Body & Containers
  * These colours are used for the main body and container backgrounds
  * ====================================================================
- * /
+ */
 
 /** Body ------------------------------------- */
 /** ------------------------------------------ */
@@ -30,8 +301,8 @@ $pt-d-container-bg-hl: #222;
 $--pt-border: --pt-border;
 
 // Used for both containers and controls
-$pt-l-border: #999; // HSL Container: L - 27
-$pt-d-border: #777; // HSL Container: L + 27
+$pt-l-border: #999; // hsl Container: L - 27
+$pt-d-border: #777; // hsl Container: L + 27
 
 /**
  * Section 2
@@ -39,7 +310,7 @@ $pt-d-border: #777; // HSL Container: L + 27
  * Text & Special Colours
  * These colours are used for banners and some special texts
  * ====================================================================
- * /
+ **/
 
 /** Text ------------------------------------- */
 /** ------------------------------------------ */
@@ -107,13 +378,13 @@ $--pt-theme-warn-on-soft: --pt-theme-warn-on-soft;
 $--pt-theme-warn-standalone: --pt-theme-warn-standalone;
 
 // Base & Border
-$pt-l-theme-warn: #f93;
+$pt-l-theme-warn: #ffaa00;
 $pt-d-theme-warn: #c60;
 $pt-l-theme-on-warn: $pt-l-text;
 $pt-d-theme-on-warn: $pt-l-text;
 // Soft (Mostly used for backgrounds)
-$pt-l-theme-warn-soft: #fc9;
-$pt-d-theme-warn-soft: #630;
+$pt-l-theme-warn-soft: #ffdd99;
+$pt-d-theme-warn-soft: #640;
 $pt-l-theme-warn-on-soft: $pt-l-text;
 $pt-d-theme-warn-on-soft: $pt-d-text;
 // Standalone (Text on body and container)
@@ -127,7 +398,7 @@ $pt-d-theme-warn-standalone: $pt-l-theme-warn-soft;
  * Control & Input Colours
  * These colours are used for control elements and inputs
  * ====================================================================
- * /
+ **/
 
 /** Flat Control Elements -------------------- */
 /** ------------------------------------------ */
@@ -135,10 +406,10 @@ $--pt-flat-control-bg: --pt-flat-control-bg;
 $--pt-flat-control-bg-highlight: --pt-flat-control-bg-highlight;
 $--pt-flat-control-bg-pressed: --pt-flat-control-bg-pressed;
 
-$pt-l-flat-control-bg: #ccc; // HSL Body: L - 25
-$pt-d-flat-control-bg: #444; // HSL Body: L + 25
-$pt-l-flat-control-bg-highlight: #aaa; // HSL Flat Control BG: L - 15
-$pt-d-flat-control-bg-highlight: #777; // HSL Flat Control BG: L + 15
+$pt-l-flat-control-bg: #ccc; // hsl Body: L - 25
+$pt-d-flat-control-bg: #444; // hsl Body: L + 25
+$pt-l-flat-control-bg-highlight: #aaa; // hsl Flat Control BG: L - 15
+$pt-d-flat-control-bg-highlight: #777; // hsl Flat Control BG: L + 15
 $pt-l-flat-control-bg-pressed: #999;
 $pt-d-flat-control-bg-pressed: #888;
 
@@ -172,8 +443,8 @@ $pt-button-bg-gradient-reverse: --pt-button-bg-gradient-reverse;
 
 $pt-l-control-text: $pt-l-text;
 $pt-d-control-text: $pt-d-text;
-$pt-l-control-border: $pt-l-border; // HSL Border: L - 10
-$pt-d-control-border: $pt-d-border; // HSL Border: L + 10
+$pt-l-control-border: $pt-l-border; // hsl Border: L - 10
+$pt-d-control-border: $pt-d-border; // hsl Border: L + 10
 $pt-l-control-border-focus: color.adjust($pt-l-control-border, $lightness: - 15%);
 $pt-d-control-border-focus: color.adjust($pt-d-control-border, $lightness: + 15%);
 

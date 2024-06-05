@@ -4,3 +4,18 @@
     outline-offset: 0;
   }
 }
+
+@mixin a11y-touchable() {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.a11i-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

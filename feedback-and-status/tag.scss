@@ -1,0 +1,46 @@
+/**
+ * Pipet Tag Class
+ * ========
+ * Tags can be used to highlight small pieces of inline information.
+ *
+ * Recommended Structure
+ * ========
+ * - <strong>
+ */
+
+@mixin tag {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: var(--pt-grey-8);
+}
+
+.tag {
+  @include tag();
+  background: var(--pt-grey-3);
+  border: 1px solid var(--pt-grey-5);
+}
+.tab-accent {
+  @include tag();
+  background: var(--pt-accent-3);
+  border: 1px solid var(--pt-accent-5);
+}
+.tag-info {
+  @include tag();
+  background: var(--pt-info-1);
+  border: 1px solid var(--pt-info-4);
+}
+.tag-warn, // todo: deprecate "tag-warn"
+.tag-warning {
+  @include tag();
+  background: var(--pt-warning-1);
+  border: 1px solid var(--pt-warning-4);
+}
+.tag-important, // todo: deprecate "tag-important"
+.tag-critical {
+  @include tag();
+  background: var(--pt-critical-1);
+  border: 1px solid var(--pt-critical-4);
+}

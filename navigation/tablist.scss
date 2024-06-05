@@ -1,0 +1,64 @@
+@import "../base-a11y";
+@import "../units";
+
+.tablist {
+  @include a11y();
+  @include a11y-touchable();
+
+  padding: $spacing-tiny $spacing-standard;
+  gap: $spacing-tiny;
+  display: flex;
+
+  overflow-y: hidden;
+  box-sizing: border-box;
+  color: var(--pt-grey-8);
+  background: var(--pt-grey-3);
+  overflow-x: scroll;
+  border-bottom: 1px solid var(--pt-nav-5);
+
+  a,
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    text-decoration: none;
+    font-size: $font-size-default;
+    font-weight: bold;
+    color: inherit;
+
+    padding: $spacing-tiny $spacing-standard;
+    margin: $spacing-none;
+    gap: $spacing-small;
+    border-radius: $border-radius-subtle;
+
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: center;
+    background: none;
+    border: none;
+    min-width: max-content;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    &:hover:not(.selected):not(:disabled), // todo: deprecate "selected"
+    &:hover:not(.active):not(:disabled) {
+      cursor: pointer;
+      color: var(--pt-grey-8);
+      background-color: var(--pt-grey-4);
+    }
+    &.selected, // todo: deprecate "selected"
+    &.active {
+      color: var(--pt-grey-8);
+      background-color: var(--pt-grey-4);
+    }
+    &:disabled {
+      color: var(--pt-grey-7);
+    }
+  }
+}

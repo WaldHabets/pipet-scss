@@ -1,17 +1,20 @@
-@import "base-colours";
-@import "pt-lib-controls";
+@import "../base-a11y";
+@import "../units";
 
 .breadcrumbs {
-  @include control-base();
-  font-weight: 600;
+  @include a11y();
+  @include a11y-touchable();
+  box-sizing: border-box;
+
+  font-size: $font-size-default;
+  font-weight: bold;
+  padding: $spacing-tiny;
 
   display: flex;
   align-items: center;
   width: min-content;
 
-  background: var(--pt-flat-control-bg);
   border: none;
-  border-radius: 8px;
   box-shadow: none;
 
   max-width: 100%;
@@ -22,32 +25,34 @@
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    fill: var(--pt-text);
+    fill: currentColor;
   }
+
   .chevron {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    fill: var(--pt-text);
+    fill: var(--pt-grey-8);
     text-align: center;
     &::after {
       content: "❯";
     }
   }
+
   & > span:not(.chevron),
   & > a {
-    padding: 4px 8px;
-    border-radius: 4px;
+    padding: 8px;
+    border-radius: $border-radius-subtle;
     width: max-content;
     flex-shrink: 0;
     &:hover:not(.selected) {
-      background: var(--pt-theme-primary);
-      color: var(--pt-theme-on-primary);
+      background: var(--pt-accent-3);
+      color: var(--pt-grey-8);
     }
   }
 
   .selected {
-    background: var(--pt-theme-primary);
-    color: var(--pt-theme-on-primary);
+    background: var(--pt-accent-3);
+    color: var(--pt-grey-8);
   }
 }

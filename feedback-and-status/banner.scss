@@ -19,7 +19,9 @@
   border-radius: 4px;
   box-shadow: var(--pt-shadow-container);
   padding: 16px;
+
   font-size: 1rem;
+  color: var(--pt-grey-8);
 
   & > .banner-title,
   & > h2, & > h3, & > h4, & > h5, & > h6,
@@ -32,28 +34,24 @@
 
 .banner {
   @include banner();
-  background: var(--pt-container-bg-highlight);
-  border-color: var(--pt-border);
-  color: var(--pt-text);
+  background: var(--pt-grey-3);
+  border-color: var(--pt-grey-5);
 }
 
 .banner-info {
   @include banner();
-  background: var(--pt-theme-info-soft);
-  border-color: var(--pt-theme-info);
-  color: var(--pt-theme-info-on-soft);
+  background: var(--pt-info-1);
+  border-color: var(--pt-info-3);
 }
-
-.banner-warn {
+.banner-warn, // todo: deprecate "banner-warn"
+.banner-warning {
   @include banner();
-  background: var(--pt-theme-warn-soft);
-  border-color: var(--pt-theme-warn);
-  color: var(--pt-theme-warn-on-soft);
+  background: var(--pt-warning-1);
+  border-color: var(--pt-warning-3);
 }
-
-.banner-important {
+.banner-important, // todo: deprecate "banner-important"
+.banner-critical {
   @include banner();
-  background: var(--pt-theme-destructive-soft);
-  border-color: var(--pt-theme-destructive);
-  color: var(--pt-theme-destructive-on-soft);
+  background: var(--pt-critical-1);
+  border-color: var(--pt-critical-3);
 }

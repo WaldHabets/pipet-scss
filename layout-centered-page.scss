@@ -1,15 +1,48 @@
-.centered-page {
-  width: 100%;
-  margin: auto;
-  box-sizing: border-box;
-  &.small {
-    max-width: 768px;
+/**
+ * @deprecated
+ */
+.centered-page
+  {
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    &.small
+      {
+        max-width: 768px;
+      }
+    &.wide
+      {
+        max-width: 1024px;
+      }
+    &.padded
+      {
+        padding-inline: 16px;
+        margin-block: 16px;
+      }
   }
-  &.wide {
-    max-width: 1024px;
+
+@mixin centering()
+  {
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
   }
-  &.padded {
-    padding-inline: 16px;
-    margin-block: 16px;
-  }
+
+.centering {
+  &,
+  &-full,
+  &-none
+    {
+      @include centering();
+    }
+  &-small
+    {
+      @include centering();
+      max-width: 768px;
+    }
+  &-wide
+    {
+      @include centering();
+      max-width: 1024px;
+    }
 }

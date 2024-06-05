@@ -3,33 +3,35 @@
 @import "base-colours";
 @import "pt-lib-shadows";
 
-
 @mixin spread-map($map: ()) {
-    @each $key, $value in $map {
-        #{$key}: $value;
-    }
+  @each $key, $value in $map {
+    #{$key}: $value;
+  }
 }
 @media (prefers-color-scheme: light) {
   :root {
     @include spread-map($pt-colours-light);
     @include spread-map($pt-shadows-light);
+    @include spread-map($colours-system-light);
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
     @include spread-map($pt-colours-dark);
     @include spread-map($pt-shadows-dark);
+    @include spread-map($colours-system-dark);
   }
 }
 :root body.light {
-    @include spread-map($pt-colours-light);
-    @include spread-map($pt-shadows-light);
+  @include spread-map($pt-colours-light);
+  @include spread-map($pt-shadows-light);
+  @include spread-map($colours-system-light);
 }
 :root body.dark {
-    @include spread-map($pt-colours-dark);
-    @include spread-map($pt-shadows-dark);
+  @include spread-map($pt-colours-dark);
+  @include spread-map($pt-shadows-dark);
+  @include spread-map($colours-system-dark);
 }
-
 
 /**
  * ==================================================================
@@ -37,13 +39,57 @@
  * ==================================================================
  */
 @import "base-reset";
+@import "base-a11y";
+
+/**
+ * Section 1
+ * ====================================================================
+ * Content
+ * ====================================================================
+ */
+@import "content/labels";
+
+/**
+ * Section 2
+ * ====================================================================
+ * Controls
+ * ====================================================================
+ */
+@import "controls/button";
+@import "controls/input";
+
+/**
+ * Section 3
+ * ====================================================================
+ * Feedback & Status
+ * ====================================================================
+ */
+@import "feedback-and-status/banner";
+@import "feedback-and-status/tag";
+
+/**
+ * Section 4
+ * ====================================================================
+ * Layout & Organisation
+ * ====================================================================
+ */
+@import "layout-and-organisation/boxes";
+
+/**
+ * Section 5
+ * ====================================================================
+ * Navigation
+ * ====================================================================
+ */
+@import "navigation/breadcrumbs";
+@import "navigation/tablist";
 
 /**
  * ==================================================================
  * Controls
  * ==================================================================
  */
-@import "c-buttons";
+//@import "c-buttons";
 @import "c-radio-item";
 /**
  * Classes to center page contents and define widths
@@ -58,30 +104,21 @@
  * Contains:
  *  .container-wrapper { .container-header, .container }
  */
-@import "pt-containers";
-@import "pt-list";
-@import "pt-notifications";
+// @import "pt-containers";
+// @import "pt-list";
 @import "pt-layout";
-@import "c-banner";
-@import "c-tags";
 /**
  * Controls
  */
 @import "pt-dropdowns";
-@import "pt-inputs";
-@import "c-tablist";
-@import "pt-switches";
-@import "c-breadcrumbs";
+//@import "pt-inputs";
+//@import "c-breadcrumbs";
 /**
  * Other
  */
 @import "article";
 @import "pt-text";
 @import "pt-style-table";
-
-.tablist {
-  @include tablist();
-}
 
 :root {
   /** Tables */
@@ -92,21 +129,5 @@
   &.dark .table {
     @include table--dark();
   }
-}
-
-:root body.light {
-  /** Controls */
-  .switch {
-    @include switch--light();
-  }
-  /** Text */
-}
-
-:root body.dark {
-  /** Controls */
-  .switch {
-    @include switch--dark();
-  }
-  /** Text */
 }
 

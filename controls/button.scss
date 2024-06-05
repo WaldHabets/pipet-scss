@@ -1,0 +1,131 @@
+@import "../base-a11y";
+@import "../units";
+@import "control-base";
+
+@mixin button() {
+  @include a11y();
+  @include a11y-touchable();
+  @include control-connect();
+  @include control-shape();
+
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-tiny;
+
+  font-weight: bold;
+  color: var(--pt-grey-8);
+
+  svg {
+    fill: currentColor;
+  }
+
+  &:hover:not(:disabled) {
+    cursor: pointer;
+  }
+  &:active:not(:disabled) {
+    box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.7) inset;
+    border-block-end-width: 1px;
+  }
+  &:disabled {
+    color: var(--pt-grey-7);
+    background: var(--pt-grey-3);
+    border-block-end-width: 1px;
+  }
+}
+
+.button {
+  @include button();
+  background: var(--pt-grey-4);
+  background: linear-gradient(0deg, var(--grey-button-bot) 35%, var(--grey-button-top) 100%);
+  border-color: var(--pt-grey-5);
+  &:hover:not(:disabled) {
+    background: var(--pt-grey-5);
+    background: linear-gradient(0deg, var(--grey-hl-button-bot) 35%, var(--grey-hl-button-top) 100%);
+    border-color: var(--pt-grey-6);
+  }
+  &:active:not(:disabled) {
+    background: var(--pt-grey-2);
+    background: linear-gradient(0deg, var(--grey-hl-button-top) 35%, var(--grey-hl-button-bot) 100%);
+    border-color: var(--pt-grey-6);
+  }
+}
+.button-accent {
+  @include button();
+  background: var(--pt-accent-2);
+  background: linear-gradient(0deg, var(--pt-accent-button-bot) 30%, var(--pt-accent-button-top) 100%);
+  border-color: var(--pt-accent-4);
+  &:hover:not(:disabled) {
+    background: var(--pt-accent-3);
+    background: linear-gradient(0deg, var(--pt-accent-hl-button-bot) 30%, var(--pt-accent-hl-button-top) 100%);
+    border-color: var(--pt-accent-5);
+  }
+  &:active:not(:disabled) {
+    background: var(--pt-accent-1);
+    background: linear-gradient(0deg, var(--pt-accent-hl-button-top) 30%, var(--pt-accent-hl-button-bot) 100%);
+    border-color: var(--pt-accent-5);
+  }
+}
+.button-info {
+  @include button();
+  background: var(--pt-info-2);
+  background: linear-gradient(0deg, var(--pt-info-button-bot) 30%, var(--pt-info-button-top) 100%);
+  border-color: var(--pt-info-4);
+  &:hover:not(:disabled) {
+    background: var(--pt-info-3);
+    background: linear-gradient(0deg, var(--pt-info-hl-button-bot) 30%, var(--pt-info-hl-button-top) 100%);
+    border-color: var(--pt-info-5);
+  }
+  &:active:not(:disabled) {
+    background: var(--pt-info-1);
+    background: linear-gradient(0deg, var(--pt-info-hl-button-top) 30%, var(--pt-info-hl-button-bot) 100%);
+    border-color: var(--pt-info-5);
+  }
+}
+.button-warning {
+  @include button();
+  background: var(--pt-warning-2);
+  background: linear-gradient(0deg, var(--pt-warning-button-bot) 30%, var(--pt-warning-button-top) 100%);
+  border-color: var(--pt-warning-4);
+  &:hover:not(:disabled) {
+    background: var(--pt-warning-3);
+    background: linear-gradient(0deg, var(--pt-warning-hl-button-bot) 30%, var(--pt-warning-hl-button-top) 100%);
+    border-color: var(--pt-warning-5);
+  }
+  &:active:not(:disabled) {
+    background: var(--pt-warning-1);
+    background: linear-gradient(0deg, var(--pt-warning-hl-button-top) 30%, var(--pt-warning-hl-button-bot) 100%);
+    border-color: var(--pt-warning-5);
+  }
+}
+.button-critical {
+  @include button();
+  background: var(--pt-critical-2);
+  background: linear-gradient(0deg, var(--pt-critical-button-bot) 30%, var(--pt-critical-button-top) 100%);
+  border-color: var(--pt-critical-4);
+  &:hover:not(:disabled) {
+    background: var(--pt-critical-3);
+    background: linear-gradient(0deg, var(--pt-critical-hl-button-bot) 30%, var(--pt-critical-hl-button-top) 100%);
+    border-color: var(--pt-critical-5);
+  }
+  &:active:not(:disabled) {
+    background: var(--pt-critical-1);
+    background: linear-gradient(0deg, var(--pt-critical-hl-button-top) 30%, var(--pt-critical-hl-button-bot) 100%);
+    border-color: var(--pt-critical-5);
+  }
+}
+.button-good {
+  @include button();
+  background: var(--pt-good-2);
+  background: linear-gradient(0deg, var(--good-button-bot) 30%, var(--good-button-top) 100%);
+  border-color: var(--pt-good-4);
+  &:hover:not(:disabled) {
+    background: var(--pt-good-3);
+    background: linear-gradient(0deg, var(--good-hl-button-bot) 30%, var(--good-hl-button-top) 100%);
+    border-color: var(--pt-good-5);
+  }
+  &:active:not(:disabled) {
+    background: var(--pt-good-1);
+    background: linear-gradient(0deg, var(--good-hl-button-top) 30%, var(--good-hl-button-bot) 100%);
+    border-color: var(--pt-good-5);
+  }
+}
