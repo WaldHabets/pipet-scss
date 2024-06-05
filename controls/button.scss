@@ -116,16 +116,16 @@
 .button-good {
   @include button();
   background: var(--pt-good-2);
-  background: linear-gradient(0deg, var(--good-button-bot) 30%, var(--good-button-top) 100%);
+  background: linear-gradient(0deg, var(--pt-good-button-bot) 30%, var(--pt-good-button-top) 100%);
   border-color: var(--pt-good-4);
   &:hover:not(:disabled) {
     background: var(--pt-good-3);
-    background: linear-gradient(0deg, var(--good-hl-button-bot) 30%, var(--good-hl-button-top) 100%);
+    background: linear-gradient(0deg, var(--pt-good-hl-button-bot) 30%, var(--pt-good-hl-button-top) 100%);
     border-color: var(--pt-good-5);
   }
   &:active:not(:disabled) {
     background: var(--pt-good-1);
-    background: linear-gradient(0deg, var(--good-hl-button-top) 30%, var(--good-hl-button-bot) 100%);
+    background: linear-gradient(0deg, var(--pt-good-hl-button-top) 30%, var(--pt-good-hl-button-bot) 100%);
     border-color: var(--pt-good-5);
   }
 }
