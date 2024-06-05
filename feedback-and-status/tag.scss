@@ -32,6 +32,11 @@
   background: var(--pt-info-1);
   border: 1px solid var(--pt-info-4);
 }
+.tag-good {
+  @include tag();
+  background: var(--pt-good-1);
+  border: 1px solid var(--pt-good-4);
+}
 .tag-warn, // todo: deprecate "tag-warn"
 .tag-warning {
   @include tag();
