@@ -50,12 +50,14 @@
     &:hover:not(.active):not(:disabled) {
       cursor: pointer;
       color: var(--pt-grey-8);
-      background-color: var(--pt-grey-4);
+      background: var(--pt-accent-1);
+      border: 1px solid var(--pt-accent-4);
     }
     &.selected, // todo: deprecate "selected"
     &.active {
       color: var(--pt-grey-8);
-      background-color: var(--pt-grey-4);
+      background: var(--pt-accent-1);
+      border: 1px solid var(--pt-accent-4);
     }
     &:disabled {
       color: var(--pt-grey-7);
